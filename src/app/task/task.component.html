@@ -1,0 +1,26 @@
+<div class="task">
+
+    <div class="heading">
+        
+        <h3 [ngClass]="done === true ? 'done' : ''">Task {{ id }}</h3>
+
+        <div class="icons">
+            <i  
+                class="far fa-check-square icons__icon"
+                title="Task done"
+                (click)="taskDone()"
+                [ngClass]="done === true ? 'icons__icon--done' : ''">
+            </i>
+
+            <i  
+                class="far fa-trash-alt icons__icon icons__icon--delete"
+                title="Delete task"
+                (click)="sendDelete()">
+            </i>
+        </div>
+
+    </div>
+
+    <p [ngClass]="done === true ? 'done' : ''">{{ text }}</p>
+
+</div>

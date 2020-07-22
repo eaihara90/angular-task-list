@@ -1,0 +1,14 @@
+<div class="cockpit">
+    <label class="cockpit__label">Task</label>
+
+    <input 
+        type="text"
+        class="cockpit__input"
+        (keypress)="checkKey($event)"
+        [(ngModel)]="text"
+    />
+
+    <button class="btn"
+        (click)="sendData(text)">Add Task
+    </button>
+</div>
