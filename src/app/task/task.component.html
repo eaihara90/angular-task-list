@@ -2,14 +2,14 @@
 
     <div class="heading">
         
-        <h3 [ngClass]="done === true ? 'done' : ''">Task {{ id }}</h3>
+        <h3 [ngClass]="isDone === true ? 'done' : ''">Task {{ id }}</h3>
 
         <div class="icons">
             <i  
                 class="far fa-check-square icons__icon"
                 title="Task done"
-                (click)="taskDone()"
-                [ngClass]="done === true ? 'icons__icon--done' : ''">
+                (click)="sendDone()"
+                [ngClass]="isDone === true ? 'icons__icon--done' : ''">
             </i>
 
             <i  
@@ -21,6 +21,6 @@
 
     </div>
 
-    <p [ngClass]="done === true ? 'done' : ''">{{ text }}</p>
+    <p [ngClass]="isDone === true ? 'done' : ''">{{ text }}</p>
 
 </div>

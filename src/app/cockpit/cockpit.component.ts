@@ -7,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class CockpitComponent implements OnInit {
 
-    @Output() taskText = new EventEmitter<{ text: string }>();
+    @Output() taskText = new EventEmitter<{ text: string, isDone: boolean }>();
 
     text: string;
 
@@ -17,13 +17,14 @@ export class CockpitComponent implements OnInit {
 
     checkKey($event) {
         if ($event.charCode === 13) {
-        this.sendData(this.text);
+            this.sendData({ text: this.text });
         }
     }
 
-    sendData(text: string) {
-        if (text) {
-            this.taskText.emit({ text: text });
+    sendData(data: { text: string }) {
+        console.log(data.text);
+        if (data.text) {
+            this.taskText.emit({ text: data.text, isDone: false });
             this.text = '';
         } else {
             alert('Input box cannot be empty!');
