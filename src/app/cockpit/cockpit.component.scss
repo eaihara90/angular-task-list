@@ -1,11 +1,13 @@
 .cockpit {
     display: flex;
-    justify-content: center;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
 
     &__label {
         color: #eee;
         display: block;
-        font-size: 30px;
+        font-size: 3rem;
         text-align: center;
     }
 
@@ -13,18 +15,19 @@
         background-color: #eee;
         border-radius: 5px;
         border: 2px solid #000;
-        flex: 0 0 70%;
-        font-size: 20px;
-        margin: 0 25px;
-        padding: 7px;
+        flex: 0 1 50%;
+        font-size: 2rem;
+        padding: .5rem;
     }
 
     .btn {
+        border-radius: 5px;
         color: #1d2550;
         cursor: pointer;
-        flex: 0 0 15%;
-        font-size: 18px;
-        font-weight: 600;
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 0 .5rem;
+        padding: .5rem 1rem;
         transition: all .2s;
 
         &:hover {
@@ -38,3 +41,25 @@
     }
 }
 
+@media only screen and (max-width: 700px) {
+    .cockpit {
+        flex-flow: row wrap;
+
+        &__input {
+            flex-grow: 1;
+            margin-left: 1rem;
+        }
+
+        &__group {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            
+            .btn {
+                flex-grow: 1; 
+            }
+        }
+        
+    }
+}

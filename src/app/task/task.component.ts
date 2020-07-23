@@ -11,20 +11,20 @@ export class TaskComponent implements OnInit {
 
     @Input() taskItem: TaskItem;
 
-    @Output() deleteTask = new EventEmitter<{ id: number, isDone: boolean }>();
-    @Output() updateTask = new EventEmitter<{ id: number, isDone: boolean }>();
+    @Output() deleteTask = new EventEmitter<TaskItem>();
+    @Output() updateTask = new EventEmitter<TaskItem>();
 
     constructor() {}
 
     ngOnInit(): void {}
 
     sendDelete() {
-        this.deleteTask.emit({ id: this.taskItem.id, isDone: this.taskItem.isDone });
+        this.deleteTask.emit(this.taskItem);
     }
 
     sendDone() {
         this.taskItem.isDone = !this.taskItem.isDone;
-        this.updateTask.emit({ id: this.taskItem.id, isDone: this.taskItem.isDone });
+        this.updateTask.emit(this.taskItem);
     }
 
 }
