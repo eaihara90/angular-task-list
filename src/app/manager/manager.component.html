@@ -1,7 +1,8 @@
 <div class="container">
 
     <app-cockpit 
-        (taskText)="addTask($event)">
+        (taskText)="addTask($event)"
+        (clearTasks)="clearAll($event)">
     </app-cockpit>
 
     <app-task 

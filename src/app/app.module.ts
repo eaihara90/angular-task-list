@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { TaskComponent } from './task/task.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ManagerComponent } from './manager/manager.component';
+import { TaskListService } from './services/task-list.service';
+import { StorageService } from './services/storage.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,10 @@ import { ManagerComponent } from './manager/manager.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    StorageService,
+    TaskListService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

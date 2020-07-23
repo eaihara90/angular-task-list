@@ -7,8 +7,12 @@
         class="cockpit__input"
         (keydown.enter)="sendData({ text: inputElementRef.value })"
     />
-
-    <button class="btn"
-        (click)="sendData({ text: inputElementRef.value })">Add Task
-    </button>
+    <div class="cockpit__group">
+        <button class="btn"
+            (click)="sendData({ text: inputElementRef.value })">Add Task
+        </button>
+        <button class="btn"
+            (click)="clearAll()">Clear All
+        </button>
+    </div>
 </div>

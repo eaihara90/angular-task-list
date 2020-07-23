@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskItem } from '../interface/task-item';
+import { TaskListService } from '../services/task-list.service';
 
 @Component({
     selector: 'app-manager',
@@ -9,34 +10,31 @@ import { TaskItem } from '../interface/task-item';
 
 export class ManagerComponent implements OnInit {
 
-    constructor() { }
+    taskList: TaskItem[];
 
-    ngOnInit(): void {}
+    constructor(private taskListService: TaskListService) {}
 
-    taskList: TaskItem[] = [];
+    ngOnInit(): void {
+        this.taskList = this.taskListService.getTaskList();
+    }
 
-    addTask(data: { text: string, isDone: boolean }) {
-        const newTask: TaskItem = {
-            id: this.taskList.length + 1,
-            text: data.text,
-            isDone: data.isDone
+    addTask(taskItem: TaskItem) {
+        this.taskListService.addTask(taskItem);
+    }
+
+    updateTask(taskItem: TaskItem) {
+        this.taskListService.updateTask(taskItem);
+    }
+
+    deleteTask(taskItem: TaskItem) {
+        this.taskListService.deleteTask(taskItem);
+        this.taskList = this.taskListService.getTaskList();
+    }
+
+    clearAll(value: {flag: boolean}) {
+        if (value.flag) {
+            this.taskListService.clear();
+            this.taskList = this.taskListService.getTaskList();
         }
-
-        this.taskList.push(newTask);
-    }
-
-    updateTask(data: { id: number, isDone: boolean }) {
-        this.taskList[data.id - 1].isDone = data.isDone;
-    }
-
-    deleteTask(data: { id: number }) {
-        this.taskList.splice(data.id - 1, 1);
-        const newTaskList = this.taskList;
-        this.taskList = [];
-        
-        newTaskList.forEach(task => this.addTask({
-            text: task.text,
-            isDone: task.isDone
-        }));
     }
 }
