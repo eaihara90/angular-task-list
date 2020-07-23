@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TaskComponent } from './task/task.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
+import { ManagerComponent } from './manager/manager.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskComponent,
-    CockpitComponent
+    CockpitComponent,
+    ManagerComponent
   ],
   imports: [
     BrowserModule,

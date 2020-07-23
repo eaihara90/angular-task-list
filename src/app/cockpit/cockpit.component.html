@@ -1,14 +1,14 @@
 <div class="cockpit">
     <label class="cockpit__label">Task</label>
 
-    <input 
+    <input
+        #inputElementRef
         type="text"
         class="cockpit__input"
-        (keypress)="checkKey($event)"
-        [(ngModel)]="text"
+        (keydown.enter)="sendData({ text: inputElementRef.value })"
     />
 
     <button class="btn"
-        (click)="sendData({text: text})">Add Task
+        (click)="sendData({ text: inputElementRef.value })">Add Task
     </button>
 </div>
