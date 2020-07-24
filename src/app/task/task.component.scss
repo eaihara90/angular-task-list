@@ -1,24 +1,28 @@
-.task {
+.task
+{
     background-color: #ddd;
     border-radius: 7px;
     margin: 3.5rem auto;
     overflow: hidden;
     width: 100%;
     
-    
-    & .heading {
+    & .heading
+    {
         background-color: #444;
         display: flex;
         justify-content: space-between;
         padding: 1rem;
         width: 100%;
         
-        & h3 {
+        & h3
+        {
             color: #e6e6e6;
             font-size: 2rem;
             width: 50%;
         }
-        & .icons {
+
+        & .icons
+        {
             align-items: center;
             color: #e6e6e6;
             display: flex;
@@ -26,47 +30,50 @@
             justify-content: flex-end;
             width: 50%;
 
-            &__icon {
+            &__icon
+            {
                 cursor: pointer;
                 transition: all .3s;
                 
-                &:active {
+                &:active
+                {
                     transform: scale(.93);
                 }
 
-                &:first-child {
-                    &:hover{
-                        color: lighten($color: #008a2e, $amount: 15%);
-                    }
+                &:first-child:hover
+                {
+                    color: lighten($color: #008a2e, $amount: 15%);
                 }
 
-                &--done {
+                &--done
+                {
                     color: #008a2e;
                 }
 
-                &--delete {
-                    &:hover {
-                        color: #ff4500;
-                    }
-                }
-
-                &:not(:last-child) {
-                    margin-left: 2rem;
+                &--delete:hover
+                {
+                    color: #ff4500;
                 }
                 
+
+                &:not(:last-child)
+                {
+                    margin-left: 2rem;
+                }
             }
-            
         }
     }
 
-    & p {
+    & p
+    {
         font-size: 1.8rem;
         font-style: italic;
         padding: 1.5rem;
         width: 100%;
     }
 
-    & .done {
+    & .done
+    {
         text-decoration: line-through underline;
     }
 }

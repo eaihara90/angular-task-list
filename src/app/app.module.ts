@@ -9,21 +9,27 @@ import { ManagerComponent } from './manager/manager.component';
 import { TaskListService } from './services/task-list.service';
 import { StorageService } from './services/storage.service';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    TaskComponent,
-    CockpitComponent,
-    ManagerComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
-  providers: [
-    StorageService,
-    TaskListService
-  ],
-  bootstrap: [AppComponent]
+@NgModule
+({
+    declarations: 
+    [
+        AppComponent,
+        TaskComponent,
+        CockpitComponent,
+        ManagerComponent
+    ],
+    imports: 
+    [
+        BrowserModule,
+        FormsModule
+    ],
+    providers:
+    [
+        StorageService,
+        TaskListService
+    ],
+    bootstrap: [
+        AppComponent
+    ]
 })
 export class AppModule { }

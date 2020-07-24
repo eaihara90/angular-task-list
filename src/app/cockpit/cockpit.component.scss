@@ -1,17 +1,20 @@
-.cockpit {
+.cockpit 
+{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     width: 100%;
 
-    &__label {
+    &__label
+    {
         color: #eee;
         display: block;
         font-size: 3rem;
         text-align: center;
     }
 
-    &__input {
+    &__input
+    {
         background-color: #eee;
         border-radius: 5px;
         border: 2px solid #000;
@@ -20,7 +23,8 @@
         padding: .5rem;
     }
 
-    .btn {
+    .btn
+    {
         border-radius: 5px;
         color: #1d2550;
         cursor: pointer;
@@ -30,38 +34,46 @@
         padding: .5rem 1rem;
         transition: all .2s;
 
-        &:hover {
+        &:hover
+        {
             background-color: #ddd;
             transform: translateY(-3px);
         }
 
-        &:active {
+        &:active
+        {
             transform: translateY(-1px);
         }
     }
 }
 
-@media only screen and (max-width: 700px) {
-    .cockpit {
+@media only screen and (max-width: 700px)
+{
+    .cockpit
+    {
         flex-flow: row wrap;
         justify-content: space-between;
 
-        &__label {
+        &__label
+        {
             margin-right: 1rem;
             flex: 0 0 10%;
         }
 
-        &__input {
+        &__input
+        {
             flex: 1 0;
         }
 
-        &__group {
+        &__group
+        {
             display: flex;
             justify-content: space-between;
             margin-top: 1.5rem;
             width: 100%;
             
-            .btn {
+            .btn
+            {
                 margin: 0;
                 flex: 0 0 48%;
             }
@@ -69,25 +81,32 @@
     }
 }
 
-@media only screen and (max-width: 420px) {
-    .cockpit {
+@media only screen and (max-width: 420px)
+{
+    .cockpit
+    {
         align-items: center;
-        &__label {
+
+        &__label
+        {
             flex: 0 1 5%;
             font-size: 2.5rem; 
         }
 
-        &__input {
+        &__input 
+        {
             flex: 1 0;
         }
 
-        &__group {
+        &__group 
+        {
             display: flex;
             justify-content: space-between;
             margin-top: 1.5rem;
             width: 100%;
             
-            .btn {
+            .btn
+            {
                 margin: 0;
                 flex: 0 0 48%;
             }
@@ -95,3 +114,13 @@
     }
 }
 
+@media only screen and (max-width: 330px)
+{
+    .cockpit
+    {
+        &__label 
+        {
+            font-size: 2rem;
+        }
+    }
+}
